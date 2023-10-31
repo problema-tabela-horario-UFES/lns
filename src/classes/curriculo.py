@@ -5,16 +5,16 @@ class Curriculo:
         self.lista_disciplinas = lista_disciplinas
 
     def __str__(self):
-        return f'Curriculo {self.nome} ({self.qtd_disciplinas}), disciplinas: {self.lista_disciplinas}\n'
+        return f'Curriculo {self.nome} ({self.qtd_disciplinas}), disciplinas: {self.lista_disciplinas}'
         
-    # def leCurriculo(self):
-    #     # TO DO
-    #     # TERMINAR DE FAZER A LEITURA DE CURRICULO
-    #     # VER SOBRE COMO ITERAR SOBRE O INPUT
-    #     curriculo = [] 
-    #     curriculo = input().split()
-    #     self.nome = curriculo[0]
-    #     self.qtd_disciplinas = curriculo[1]
-    #     self.lista_disciplinas = resto
-    #     self.nome, self.qtd_disciplinas, list = input()
+    def leCurriculo(self):
+        # TO DO
+        # TERMINAR DE FAZER A LEITURA DE CURRICULO
+        # VER SOBRE COMO ITERAR SOBRE O INPUT
+        curriculo = input().split()
+        self.nome = curriculo[0]
+        self.qtd_disciplinas = int(curriculo[1])
+        self.lista_disciplinas = []
+        for i in range(self.qtd_disciplinas):
+            self.lista_disciplinas.append(curriculo[i+2])
         
