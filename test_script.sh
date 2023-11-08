@@ -3,6 +3,15 @@
 runall=false
 workspaces=true
 
+
+exec='/home/codespace/.python/current/bin/python3 /workspaces/lns/src/main.py' # github workspaces
+#exec=Python3 src/main.py # ubuntu
+
+#saida='' # saida padrao no terminal
+saida='/workspaces/lns/saida/saida.txt'
+
+
+
 instances=(
     "toy.ctt"
     "comp01.ctt"
@@ -28,20 +37,14 @@ instances=(
     "comp21.ctt"
 )
 
-if $workspaces
+
+if $runall
 then
-    
-    if $runall
-    then
-        for i in ${!instances[@]};do
-            echo "Installing ${instances[i]}"
-            /home/codespace/.python/current/bin/python3 /workspaces/lns/src/main.py </workspaces/lns/Instancias/${instances[i]}
-        done
-    else
-        /home/codespace/.python/current/bin/python3 /workspaces/lns/src/main.py </workspaces/lns/Instancias/toy.ctt
-    fi
-
-
+    for i in ${!instances[@]};do
+        echo "Installing ${instances[i]}"
+        $exec </workspaces/lns/Instancias/${instances[i]} $saida
+    done
 else
-    python3 src/main.py <instancias/toy
+    #echo "$exec </workspaces/lns/Instancias/toy.ctt $saida"
+    $exec </workspaces/lns/Instancias/toy.ctt >$saida
 fi
