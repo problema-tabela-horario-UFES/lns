@@ -8,9 +8,6 @@ class Curriculo:
         return f'Curriculo {self.nome} ({self.qtd_disciplinas}), disciplinas: {self.lista_disciplinas}'
         
     def leCurriculo(self):
-        # TO DO
-        # TERMINAR DE FAZER A LEITURA DE CURRICULO
-        # VER SOBRE COMO ITERAR SOBRE O INPUT
         curriculo = input().split()
         self.nome = curriculo[0]
         self.qtd_disciplinas = int(curriculo[1])
