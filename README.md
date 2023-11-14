@@ -38,9 +38,28 @@ A partir dos dados da instancia devemos criar uma solução que possibilite aloc
 
 ## solucao - lns
 
+Conforme o seguinte pseudo-codigo do LNS:
 
-***adicionar pseudocodigo do LNS***
+```Python
+input: a feasible solution x 
+best = x 
+
+Repeat
+    test = r(d(x))
+    If {accept (test, x)} 
+        x = test
+    EndIf
+    If {c(x) > c(best)}
+        best = x
+    EndIf
+Until{stop criterion is met}
+
+Return best
+```
 
 
-Para solucionar o problema, temos como proposta preencher uma matriz de 3 dimensões em que 
+Assim para solucionar o problema, temos como proposta preencher uma matriz de 3 dimensões em que suas dimensões representam salas, dias, horarios.
+
 ![estrutura de solucao](https://4.bp.blogspot.com/_AojK1cTeQfU/S0eSeQzFZ0I/AAAAAAAAAJM/SvhcMnw8Gzs/s320/matriz_3d.JPG)
+***editar a imagem para sala dia horario***
+
