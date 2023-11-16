@@ -40,26 +40,28 @@ class Solucao(instancia.Instancia):
         self.le_instancia() # herdado da classe instancia
         print(self.str_Instancia()) 
         
+        self.matriz_alocacao = self.inicializaMatrizAlocacao()
         self.custo = 0
-        self.inicializaMatrizAlocacao()
         
-        self.matriz_alocacao = self.geraSolucaoInicial()
-        
+        self.solucao_inicial = self.geraSolucaoInicial()
+        self.melhor_solucao = solucao
         
         #self.solucao_atual = self.geraSolucaoInicial()
         #self.melhor_solucao = self.solucao_atual
         #self.melhor_custo = self.calculaCusto(self.melhor_solucao)
 
     def inicializaMatrizAlocacao(self):
-        self.matriz_alocacao = []
+        matriz_alocacao = []
         for i in range(self.qtd_salas):
             sala = []
-            self.matriz_alocacao.append(sala)
+            matriz_alocacao.append(sala)
             for j in range(self.qtd_dias):
                 dia = []
-                self.matriz_alocacao[i].append(dia)
+                matriz_alocacao[i].append(dia)
                 for k in range(self.qtd_horarios):
-                    self.matriz_alocacao[i][j].append(-1)
+                    matriz_alocacao[i][j].append(-1)
+        
+        return matriz_alocacao
     
     def __str__(self):
         # imprimir a partir de self.best_solution
@@ -134,6 +136,9 @@ class Solucao(instancia.Instancia):
         solucao_destruida = solucao
         lista_removidos = []
         
+        # VASCULHAS ENTRE AS SALAS DIAS E HORARIOS PROCURANDO QUAIS TEM UM GRANDE IMPACTO
+
+
         #remover 15 % dos alocados
         
         return solucao_destruida, lista_removidos
