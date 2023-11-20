@@ -44,7 +44,7 @@ class Solucao(instancia.Instancia):
         self.custo = 0
         
         self.solucao_inicial = self.geraSolucaoInicial()
-        self.melhor_solucao = solucao
+        self.melhor_solucao = self.solucao_inicial()
         
         #self.solucao_atual = self.geraSolucaoInicial()
         #self.melhor_solucao = self.solucao_atual
@@ -124,8 +124,17 @@ class Solucao(instancia.Instancia):
         return 0
 
     def lns(self):
+        solucao = self.solucao_inicial
         while time.time() < self.timelimit:
-            self.destroy(self.solucao_atual)
+            sol_des, remov = self.lns_destroy(solucao)
+            new_sol = self.lns_repair(sol_des, remov)
+
+            if 
+
+
+            if self.calculaCusto(new_sol) < self.calculaCusto(self.melhor_solucao):
+                self.melhor_solucao = new_sol
+                solucao = new_sol
             #destroy solucao
             #repair solucao
             
@@ -174,11 +183,43 @@ class Solucao(instancia.Instancia):
         return 0
     def restricao_4(self):
         return 0
-    def restricao_5(self):
-        return 0
-    def restricao_6(self):
-        return 0
+    def restricao_5(self, solucao):
+        custo = 0
+        for k in range(self.qtd_salas):
+            for i in range(self.qtd_dias):
+                for j in range(self.qtd_horarios):
+                    if solucao[k][i][j] != -1: # verifica se a sala nesse dia e horario esta vago
+                        #avaliar qnts alunos tem a mais q a capacidade da sala 
+                        print("rest 5: ",self.lista_cursos[solucao[k][i][j]].qtd_alunos, self.lista_salas[k].capacidade)
+                        if self.lista_cursos[solucao[k][i][j]].qtd_alunos < self.lista_salas[k].capacidade:
+                            custo += self.lista_cursos[solucao[k][i][j]].qtd_alunos - self.lista_salas[k].capacidade
+        return custo
+    
+    def restricao_6(self, solucao):
+        custo = 0
+        for c in range(self.qtd_cursos): # para cada curso
+            qtd_dias = 0
+            # INCOMPLETOOOOOOOOOOO
+            #verificar quais dias ele aparece
+            for d in range(self.qtd_dias):
+
+                # se o curso estiver nesse dia 
+                qtd_dias += 1
+            
+            if self.lista_cursos[c].num_min_dias > qtd_dias:
+                custo += self.lista_cursos[c].num_min_dias - qtd_dias
+            
+
+
+
+
+
+        return custo
     def restricao_7(self):
+        #– S3-Aulas Isoladas: Aulas de disciplinas de um mesmo currículo devem ser adjacentes uma à outra. Para cada currículo, uma violação é contada quando há uma aula não adjacente à nenhuma outra aula do mesmo currículo no mesmo dia.
+
+
         return 0
     def restricao_8(self):
+        # as aulas de um curso devem ser na mesma sala
         return 0
