@@ -63,3 +63,6 @@ Assim para solucionar o problema, temos como proposta preencher uma matriz de 3 
 ![estrutura de solucao](https://4.bp.blogspot.com/_AojK1cTeQfU/S0eSeQzFZ0I/AAAAAAAAAJM/SvhcMnw8Gzs/s320/matriz_3d.JPG)
 ***editar a imagem para sala dia horario***
 
+## Resultados
+
+[planilha](https://docs.google.com/spreadsheets/d/1FBGchNg_8jx5-l84uXOVGDslDQwut4UzZ3asOETJAlc/edit?usp=sharing)
