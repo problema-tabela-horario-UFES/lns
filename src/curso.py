@@ -5,6 +5,7 @@ class Curso:
         self.qtd_aulas = qtd_aulas
         self.num_min_dias = num_min_dias 
         self.qtd_alunos = qtd_alunos
+        self.qtd_indisponibilidades = 0
         self.lista_indisponibilidades = []
         
     def __str__(self):
@@ -23,3 +24,4 @@ class Curso:
     def insereIndisponibilidade(self, dia, horario):
         indisponibilidade = [dia, horario]
         self.lista_indisponibilidades.append(indisponibilidade)
+        self.qtd_indisponibilidades += 1

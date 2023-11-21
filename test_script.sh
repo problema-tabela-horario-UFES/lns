@@ -1,15 +1,14 @@
 # script for running in github codespaces
 
 runall=false
-workspaces=true
+exec='python3 src/main.py' # ubuntu
+saida='results/saida'
+testefile='tests/comp03.ctt'
 
 
-exec='/home/codespace/.python/current/bin/python3 /workspaces/lns/src/main.py' # github workspaces
-#exec=Python3 src/main.py # ubuntu
 
 #saida='' # saida padrao no terminal
-saida='/workspaces/lns/saida/saida.txt'
-
+saida='results/grafico.txt'
 
 
 instances=(
@@ -41,10 +40,13 @@ instances=(
 if $runall
 then
     for i in ${!instances[@]};do
-        echo "Installing ${instances[i]}"
-        $exec </workspaces/lns/Instancias/${instances[i]} $saida
+        echo "Running instance ${instances[i]}"
+        #echo "$exec </tests/${instances[i]} > $saida$i.txt"
+        for j in 1 2 3 4 5;do
+            $exec <tests/${instances[i]} > ${saida}${i}_${j}.txt
+        done
     done
 else
     #echo "$exec </workspaces/lns/Instancias/toy.ctt $saida"
-    $exec </workspaces/lns/Instancias/toy.ctt >$saida
+    $exec <$testefile > $saida
 fi

@@ -1,5 +1,11 @@
 import instancia
 import time
+import random
+import copy
+# magic numbers:
+# gera solucao inicial randomness 0.75
+# verifica valiadde 0.10
+
 
 
 '''
@@ -35,20 +41,19 @@ primeira, contam como uma violação.
 '''
 
 class Solucao(instancia.Instancia):
-    def __init__(self, timelimit):
-        self.timelimit = timelimit
+    def __init__(self):
         self.le_instancia() # herdado da classe instancia
-        print(self.str_Instancia()) 
+        #print(self.str_Instancia()) 
+        self.total_aulas = self.calculaTotalAulas() 
         
+
         self.matriz_alocacao = self.inicializaMatrizAlocacao()
         self.custo = 0
         
         self.solucao_inicial = self.geraSolucaoInicial()
-        self.melhor_solucao = self.solucao_inicial()
         
-        #self.solucao_atual = self.geraSolucaoInicial()
-        #self.melhor_solucao = self.solucao_atual
-        #self.melhor_custo = self.calculaCusto(self.melhor_solucao)
+        #print(self.calculaCusto(self.solucao_inicial))
+
 
     def inicializaMatrizAlocacao(self):
         matriz_alocacao = []
@@ -69,13 +74,13 @@ class Solucao(instancia.Instancia):
 
         return string
     
-    def str_Solucao(self):
+    def str_Solucao(self, solucao):
         string = "Solucao: \n"
         for i in range(self.qtd_salas):
             for j in range(self.qtd_dias):
                 for k in range(self.qtd_horarios):
-                    if self.matriz_alocacao[i][j][k] != -1:
-                        string += f"{self.lista_cursos[self.matriz_alocacao[i][j][k]].nome} {self.lista_salas[i].nome} {j} {k}\n"
+                    if solucao[i][j][k] != -1:
+                        string += f"{self.lista_cursos[solucao[i][j][k]].nome} {self.lista_salas[i].nome} {j} {k}\n"
         return string
 
     def str_Matriz_Alocacao(self):
@@ -91,135 +96,272 @@ class Solucao(instancia.Instancia):
                     #string += str(self.matriz_alocacao[i][j][k]) + " "
                 string += "\n"
         return string
-            
-    def geraSolucaoInicial(self):
-        solucao = self.matriz_alocacao
-        
+    
+    def calculaTotalAulas(self):
+        total = 0
         for c in range(self.qtd_cursos):
-            for qtd in range(self.lista_cursos[c].qtd_aulas):
-                alocado = 0
+            total += self.lista_cursos[c].qtd_aulas
+        
+        return total
+
+    def alocaCurso(self, curso, solucao, randomness):
+        alocado = 0
+        for k in range(self.qtd_salas):
+            if alocado == 1: break
+            for j in range(self.qtd_horarios):
+                if alocado == 1: break
                 for i in range(self.qtd_dias):
                     if alocado == 1: break
-                    for j in range(self.qtd_horarios):
-                        if alocado == 1: break
-                        for k in range(self.qtd_salas):
-                            if alocado == 1: break
-                            if solucao[k][i][j] == -1: # verifica se a sala nesse dia e horario esta vago
-                                if True: #verificar se o horario i j nao é proibido do curso 
-                                        #esse check deve ver as restricoes de professor
-                                    solucao[k][i][j] = c 
-                                    alocado = 1
+                    if random.random() < randomness: #fator de aleatoriedade 
+                        if solucao[k][i][j] == -1:
+                            if self.verificaDisponibilidade(solucao, curso, k, i, j): #verificar a disponibilidade de alocar o curso nessa sala dia horario
+                                #print(self.lista_cursos[curso].nome, "alocado")
+                                solucao[k][i][j] = curso
+                                alocado = 1
+        return solucao, alocado
+
+    def alocaCursoForce(self, curso, solucao):
+        #print("Force", self.lista_cursos[curso].nome)
+        alocado = 0
+        for k in range(self.qtd_salas):
+            if alocado == 1: break
+            for i in range(self.qtd_dias):
+                if alocado == 1: break
+                for j in range(self.qtd_horarios):
+                    if alocado == 1: break
+                    
+                    if self.verificaDisponibilidade(solucao, curso, k, i, j) and solucao[k][i][j] != curso:
+                        removido = solucao[k][i][j]
+                        solucao[k][i][j] = curso
+                        solucao, lixo = self.alocaCurso(removido, solucao, 1)
+                        alocado = 1
         
+        
+        return solucao
+    def geraSolucaoInicial(self):
+        solucao = self.matriz_alocacao
+
+        time_si = time.time()
+
+        for c in range(self.qtd_cursos):
+            for qtd in range(self.lista_cursos[c].qtd_aulas):
+                solucao, alocado = self.alocaCurso(c, solucao, 0.2)
+                if not alocado:
+                    solucao, alocado = self.alocaCurso(c, solucao, 1)
+                    if not alocado:
+                        #print(self.lista_cursos[c].nome, "nao alocado")
+                        solucao = self.alocaCursoForce(c, solucao)
+
+
+        time_si = time.time() - time_si
+        print("Tempo Gerar Solucao Inicial:", time_si)
         return solucao
                                 
                                 
                                     
 
 
-    def verificaDisponibilidade(self, i, j):
-        if self.matriz_alocacao[i][j] == None: # Verifica se nenhuma aula foi alocada
-            # fazer verificacao se nao esta dentro da lista de indisponibilidades
-            return 1
+    def verificaDisponibilidade(self, solucao, curso, sala, dia, horario):
+        #print("Verifica:", curso, sala, dia, horario)
+        #if solucao[sala][dia][horario] != -1: # Sala nesse dia e horario esta ocupada
+            #return 0
+
+        # Verifica se o horario nao esta dentro da lista de indisponibilidades do curso
+        for i in range(self.lista_cursos[curso].qtd_indisponibilidades):
+            valor = self.lista_cursos[curso].lista_indisponibilidades[i]
+            if int(dia) == int(valor[0]) and int(horario) == int(valor[1]):
+                return 0
         
-        return 0
+        # Verifica se o professor esta disponivel nesse horario
+        for k in range(self.qtd_salas):
+            if k != sala:
+                if solucao[k][dia][horario] != -1:
+                    #print( self.lista_cursos[curso], self.lista_cursos[ solucao[k][dia][horario] ])
+                    if self.lista_cursos[curso].professor == self.lista_cursos[ solucao[k][dia][horario] ].professor:
+                        #print("professor igual")
+                        return 0
+        
+        # Verifica se alguma outra sala esta acontecendo aula dessa disciplina ou de alguma dentro do mesmo curriculo
+        for cur in range(self.qtd_curriculos):
+            if self.lista_cursos[curso].nome in self.lista_curriculos[cur].lista_disciplinas:
+                for k in range(self.qtd_salas):
+                    if k != sala:
+                        if solucao[k][dia][horario] != -1:
+                            #print(self.lista_cursos[ solucao[k][dia][horario] ].nome)
+                            #print(self.lista_curriculos[cur].lista_disciplinas)
+                            if self.lista_cursos[ solucao[k][dia][horario] ].nome in self.lista_curriculos[cur].lista_disciplinas:
+                                return 0
 
-    def lns(self):
-        solucao = self.solucao_inicial
-        while time.time() < self.timelimit:
-            sol_des, remov = self.lns_destroy(solucao)
+                
+        if int(self.lista_cursos[curso].qtd_alunos) > int(self.lista_salas[sala].capacidade):
+            if random.random() > 0.75:
+                return 0
+
+        return 1
+
+    def lns(self, timelimit):
+        starttime = time.time()
+
+        #print("Starttime", starttime)
+        solucao = copy.deepcopy(self.solucao_inicial)
+        custo = self.calculaCusto(solucao)
+        print("Custo inicial", custo)
+        self.melhor_solucao = copy.deepcopy(solucao)
+
+        while time.time() < starttime + timelimit:
+            print(custo)
+            #print(time.time() - starttime)
+
+            #print("ant", solucao)
+            sol_des, remov = self.lns_destroy(copy.deepcopy(solucao))
             new_sol = self.lns_repair(sol_des, remov)
+            #print("dep", solucao)
 
-            if 
+            #if random.random() < 0.15: # 15 perc chance att a solucao independente
+            #    solucao = copy.deepcopy(new_sol)
 
-
-            if self.calculaCusto(new_sol) < self.calculaCusto(self.melhor_solucao):
-                self.melhor_solucao = new_sol
-                solucao = new_sol
-            #destroy solucao
-            #repair solucao
+            #print("comp\n", melhor_solucao, "\n x \n", new_sol)
+            #print(, custo)
+            #print(new_sol)
+            avalia = self.calculaCusto(new_sol) 
             
-            #avalia
-                #melhor solucao = solucao
-            
+            if avalia < custo:
+                #print("melhora")
+                solucao = copy.deepcopy(new_sol)
+                self.melhor_solucao = copy.deepcopy(new_sol)
+                #print("a\n", melhor_solucao, self.calculaCusto(melhor_solucao))
+                custo = avalia
+
+        return self.melhor_solucao
+        #print("FIM LNS Solucao")
+        #print(self.melhor_solucao, self.calculaCusto(self.melhor_solucao))
+
+
     def lns_destroy(self, solucao):
+        #print("Destroy")
         solucao_destruida = solucao
         lista_removidos = []
+        qtd_removidos = 0
         
-        # VASCULHAS ENTRE AS SALAS DIAS E HORARIOS PROCURANDO QUAIS TEM UM GRANDE IMPACTO
+        #print(self.total_aulas, self.total_aulas * 0.15)
 
+        while qtd_removidos < self.total_aulas * 0.15:
+            sala = random.randint(0, self.qtd_salas-1)
+            dia = random.randint(0, self.qtd_dias-1)
+            horario = random.randint(0, self.qtd_horarios-1)
 
-        #remover 15 % dos alocados
-        
+            if solucao[sala][dia][horario] != -1:
+                lista_removidos.append(solucao[sala][dia][horario])
+                solucao[sala][dia][horario] = -1
+                qtd_removidos += 1
+
+        #print(lista_removidos)
         return solucao_destruida, lista_removidos
     
     def lns_repair(self, solucao_destruida, lista_removidos):
-        while lista_removidos != vazio:            
-            insere 
-        
-        
+        #print("repair")
+        solucao = solucao_destruida
+        while len(lista_removidos) > 0:
+            curso = lista_removidos.pop()
+            #print(curso)
+            alocado = 0
+            solucao, alocado = self.alocaCurso(curso, solucao, 0.2)
+            if not alocado:
+                solucao, alocado = self.alocaCurso(curso, solucao, 1)
+                if not alocado:
+                    solucao = self.alocaCursoForce(curso, solucao)
+    
+        return solucao
 
-    def verificaValidadeSolucao(self):
-        validade = 1
-        validade -= self.restricao_1()
-        validade -= self.restricao_2()
-        validade -= self.restricao_3()
-        validade -= self.restricao_4()
-        return validade
-        
     def calculaCusto(self, solucao):
         custo = 0
-        custo += 1 * self.restricao_5(solucao)
-        custo += 5 * self.restricao_6(solucao)
-        custo += 2 * self.restricao_7(solucao)
-        custo += 1 * self.restricao_8(solucao)
+        custo += self.restricao_5(solucao, 1)
+        custo += self.restricao_6(solucao, 5)
+        custo += self.restricao_7(solucao, 2)
+        custo += self.restricao_8(solucao, 1)
         return custo
-                
     
-    def restricao_1(self):
-        return 0
-    def restricao_2(self): 
-        return 0
-    def restricao_3(self):
-        return 0
-    def restricao_4(self):
-        return 0
-    def restricao_5(self, solucao):
+    def restricao_5(self, solucao, peso=1):
+        #print("Restricao 5:\n")
         custo = 0
         for k in range(self.qtd_salas):
             for i in range(self.qtd_dias):
                 for j in range(self.qtd_horarios):
                     if solucao[k][i][j] != -1: # verifica se a sala nesse dia e horario esta vago
                         #avaliar qnts alunos tem a mais q a capacidade da sala 
-                        print("rest 5: ",self.lista_cursos[solucao[k][i][j]].qtd_alunos, self.lista_salas[k].capacidade)
-                        if self.lista_cursos[solucao[k][i][j]].qtd_alunos < self.lista_salas[k].capacidade:
-                            custo += self.lista_cursos[solucao[k][i][j]].qtd_alunos - self.lista_salas[k].capacidade
-        return custo
+                        if self.lista_cursos[solucao[k][i][j]].qtd_alunos > int(self.lista_salas[k].capacidade):
+                            #print(self.lista_cursos[solucao[k][i][j]].nome, i , j ,self.lista_cursos[solucao[k][i][j]].qtd_alunos - int(self.lista_salas[k].capacidade))
+                            custo += self.lista_cursos[solucao[k][i][j]].qtd_alunos - int(self.lista_salas[k].capacidade)
+        #print("R5", custo*peso)
+        return custo*peso
     
-    def restricao_6(self, solucao):
+    def restricao_6(self, solucao, peso=5):
+        # – S2-Número Mínimo de Dias de Aula: As aulas de uma disciplina devem ser espalhadas em um número mínimo de dias. Cada dia abaixo do número mínimo de dias conta como uma violação.
+        #print("Restricao 6:\n")
         custo = 0
         for c in range(self.qtd_cursos): # para cada curso
+            
             qtd_dias = 0
-            # INCOMPLETOOOOOOOOOOO
-            #verificar quais dias ele aparece
-            for d in range(self.qtd_dias):
-
-                # se o curso estiver nesse dia 
-                qtd_dias += 1
+            for i in range(self.qtd_dias):
+                aux = 0
+                for k in range(self.qtd_salas):
+                    if aux == 1:
+                        break
+                    for j in range(self.qtd_horarios):
+                        if solucao[k][i][j] == c:
+                            aux = 1
+                            break
+                if aux == 1:
+                    qtd_dias += 1
             
             if self.lista_cursos[c].num_min_dias > qtd_dias:
+                #print(self.lista_cursos[c].nome, self.lista_cursos[c].num_min_dias, qtd_dias)
                 custo += self.lista_cursos[c].num_min_dias - qtd_dias
-            
+        #print("R6", custo*peso)
+        return custo * peso
 
-
-
-
-
-        return custo
-    def restricao_7(self):
+    def restricao_7(self, solucao, peso=2):
+        #return 0
+        custo = 0
         #– S3-Aulas Isoladas: Aulas de disciplinas de um mesmo currículo devem ser adjacentes uma à outra. Para cada currículo, uma violação é contada quando há uma aula não adjacente à nenhuma outra aula do mesmo currículo no mesmo dia.
+        for k in range(self.qtd_salas):
+            for i in range(self.qtd_dias):
+                for cur in range(self.qtd_curriculos):
+                    qtd = 0
+                    seq = 0
+                    max_seq = 0
+                    for j in range(self.qtd_horarios):
+                        if self.lista_cursos[ solucao[k][i][j] ].nome in self.lista_curriculos[cur].lista_disciplinas:
+                            qtd += 1
+                            seq += 1
+                        else:
+                            if seq > max_seq: max_seq = seq
+                            seq = 0
+                    
+                    if qtd != max_seq:
+                        custo += 1
 
-
-        return 0
-    def restricao_8(self):
+        #print("R7", custo*peso)
+        return custo*peso
+    
+    def restricao_8(self, solucao, peso=1):
+        
         # as aulas de um curso devem ser na mesma sala
-        return 0
+        custo = 0
+        for c in range(self.qtd_cursos): # para cada curso verificar se ele esta na mesma sala
+            sala = 0
+            for k in range(self.qtd_salas):
+                aux = 0
+                for i in range(self.qtd_dias):
+                    if aux == 1: 
+                        break
+                    for j in range(self.qtd_horarios):
+                        if solucao[k][i][j] == c:
+                            aux = 1
+                            break
+
+                sala += aux
+            #print(self.lista_cursos[c].nome, sala)
+            custo += sala - 1
+        #print("R8", custo*peso)
+        return custo*peso
