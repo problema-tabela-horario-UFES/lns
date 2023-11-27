@@ -1,14 +1,13 @@
 # script for running in github codespaces
 
-runall=false
+runall=true
 exec='python3 src/main.py' # ubuntu
 saida='results/saida'
 testefile='tests/comp03.ctt'
-
+timelimit='timelimit=1'
 
 
 #saida='' # saida padrao no terminal
-saida='results/grafico.txt'
 
 
 instances=(
@@ -36,17 +35,27 @@ instances=(
     "comp21.ctt"
 )
 
+echo "Running"
+
+
 
 if $runall
 then
+    # Run for each instance 5 times
     for i in ${!instances[@]};do
         echo "Running instance ${instances[i]}"
         #echo "$exec </tests/${instances[i]} > $saida$i.txt"
         for j in 1 2 3 4 5;do
-            $exec <tests/${instances[i]} > ${saida}${i}_${j}.txt
+            $exec <tests/${instances[i]} > ${saida}${i}_${j}.txt $timelimit
         done
     done
 else
     #echo "$exec </workspaces/lns/Instancias/toy.ctt $saida"
     $exec <$testefile > $saida
 fi
+
+
+# Run Validator
+for file in 'ls results/*';do
+    echo ${file}
+done
