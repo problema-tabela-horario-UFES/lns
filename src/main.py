@@ -3,7 +3,20 @@
 from solucao import *
 from instancia import *
 
-timelimit = 60
+
+DEBUG = False
+DEBUG_CUSTO = False
+timelimit = 180
+
+import sys
+
+for i, arg in enumerate(sys.argv):
+    #print(i, arg)
+    if "timelimit=" in arg:
+        timelimit = int(arg.strip("timelimit="))
+        
+#print("time limit", timelimit)
+
 
 s = Solucao()
 #print("Inicial", s.solucao_inicial)
