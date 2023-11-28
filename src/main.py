@@ -3,24 +3,29 @@
 from solucao import *
 from instancia import *
 
-
-DEBUG = False
-DEBUG_CUSTO = False
 timelimit = 180
-
+g = False
+d = False
+dc = False
 import sys
 
 for i, arg in enumerate(sys.argv):
     #print(i, arg)
-    if "timelimit=" in arg:
-        timelimit = int(arg.strip("timelimit="))
+    if "--timelimit=" in arg:
+        #print(arg.strip("timelimit="))
+        timelimit = int(arg.strip("--timelimit="))
+    if "--grafico" in arg:
+        g = True
+    if "--debug" in arg:
+        d = True
         
 #print("time limit", timelimit)
 
 
-s = Solucao()
+s = Solucao(GRAFICO=g, DEBUG=d, DEBUG_CUSTO=dc)
 #print("Inicial", s.solucao_inicial)
 
 sol = s.lns(timelimit)
 #print(sol)
-print(s.str_Solucao(sol), "\nCusto:", s.calculaCusto(sol))
+
+print(s.str_Solucao(sol), "\nCusto e Iteracoes:", s.calculaCusto(sol), s.ite)

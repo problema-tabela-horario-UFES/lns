@@ -3,9 +3,6 @@ import time
 import random
 import copy
 
-DEBUG = False
-DEBUG_CUSTO = True
-
 '''
 Restrições Fortes:
 – H1-Aulas: Todas as aulas de uma disciplina devem ser alocadas, e em períodos
@@ -41,7 +38,11 @@ primeira, contam como uma violação.
 
 
 class Solucao(instancia.Instancia):
-    def __init__(self):
+    def __init__(self, DEBUG=False, DEBUG_CUSTO=False, GRAFICO=False):
+        self.DEBUG = DEBUG
+        self.DEBUG_CUSTO = DEBUG_CUSTO
+        self.GRAFICO = GRAFICO
+        
         self.le_instancia() # herdado da classe instancia
         #print(self.str_Instancia()) 
         self.total_aulas = self.calculaTotalAulas() 
@@ -49,9 +50,13 @@ class Solucao(instancia.Instancia):
 
         self.matriz_alocacao = self.inicializaMatrizAlocacao()
         self.custo = 0
+        self.ite = 0
         
         self.solucao_inicial = self.geraSolucaoInicial()
         
+
+
+
         #print(self.calculaCusto(self.solucao_inicial))
 
 
@@ -163,7 +168,7 @@ class Solucao(instancia.Instancia):
 
 
     def verificaDisponibilidade(self, solucao, curso, sala, dia, horario):
-        if DEBUG: print("Verifica:", curso, sala, dia, horario)
+        if self.DEBUG: print("Verifica:", curso, sala, dia, horario)
         #if solucao[sala][dia][horario] != -1: # Sala nesse dia e horario esta ocupada
             #return 0
 
@@ -203,13 +208,17 @@ class Solucao(instancia.Instancia):
     def lns(self, timelimit):
         starttime = time.time()
 
-        if DEBUG: print("Starttime", starttime)
+        if self.DEBUG: print("Starttime", starttime)
         solucao = copy.deepcopy(self.solucao_inicial)
         custo = self.calculaCusto(solucao)
-        if DEBUG: print("Custo inicial", custo)
+        if self.DEBUG: print("Custo inicial", custo)
         self.melhor_solucao = copy.deepcopy(solucao)
 
+        
+
         while time.time() < starttime + timelimit:
+
+            self.ite += 1
             #print(custo)
             #print(time.time() - starttime)
 
@@ -226,6 +235,8 @@ class Solucao(instancia.Instancia):
             #print(new_sol)
             avalia = self.calculaCusto(new_sol) 
             
+            if self.GRAFICO: print(self.ite, ";", avalia, ";", custo)
+
             if avalia < custo:
                 #print("melhora")
                 solucao = copy.deepcopy(new_sol)
@@ -233,7 +244,7 @@ class Solucao(instancia.Instancia):
                 #print("a\n", melhor_solucao, self.calculaCusto(melhor_solucao))
                 custo = avalia
         
-        if DEBUG_CUSTO:
+        if self.DEBUG_CUSTO:
             print("Custo Solucao Final:\n"); print(self.calculaCusto(self.melhor_solucao))
 
         return self.melhor_solucao
@@ -242,12 +253,11 @@ class Solucao(instancia.Instancia):
 
 
     def lns_destroy(self, solucao):
-        if DEBUG: print("Destroy")
+        if self.DEBUG: print("Destroy")
         solucao_destruida = solucao
         lista_removidos = []
         qtd_removidos = 0
         
-        #print(self.total_aulas, self.total_aulas * 0.15)
 
         while qtd_removidos < self.total_aulas * 0.15:
             sala = random.randint(0, self.qtd_salas-1)
@@ -259,15 +269,15 @@ class Solucao(instancia.Instancia):
                 solucao[sala][dia][horario] = -1
                 qtd_removidos += 1
 
-        if DEBUG: print("removidos", lista_removidos)
+        if self.DEBUG: print("removidos", lista_removidos)
         return solucao_destruida, lista_removidos
     
     def lns_repair(self, solucao_destruida, lista_removidos):
-        if DEBUG: print("Repair")
+        if self.DEBUG: print("Repair")
         solucao = solucao_destruida
         while len(lista_removidos) > 0:
             curso = lista_removidos.pop()
-            if DEBUG: print(curso)
+            if self.DEBUG: print(curso)
             alocado = 0
             solucao, alocado = self.alocaCurso(curso, solucao, 0.2)
             if not alocado:
@@ -278,11 +288,14 @@ class Solucao(instancia.Instancia):
         return solucao
 
     def calculaCusto(self, solucao):
-        custo = 0
-        custo += self.restricao_5(solucao, 1)
-        custo += self.restricao_6(solucao, 5)
-        custo += self.restricao_7(solucao, 2)
-        custo += self.restricao_8(solucao, 1)
+        c5 = self.restricao_5(solucao, 1)
+        c6 = self.restricao_6(solucao, 5)
+        c7 = self.restricao_7(solucao, 2)
+        c8 = self.restricao_8(solucao, 1)
+
+        custo = c5 + c6 + c7 + c8
+
+        #print("custo", c5,c6,c7,c8, custo)
         return custo
     
     def restricao_5(self, solucao, peso=1):
@@ -293,9 +306,9 @@ class Solucao(instancia.Instancia):
                     if solucao[k][i][j] != -1: # verifica se a sala nesse dia e horario esta vago
                         #avaliar qnts alunos tem a mais q a capacidade da sala 
                         if self.lista_cursos[solucao[k][i][j]].qtd_alunos > int(self.lista_salas[k].capacidade):
-                            if DEBUG_CUSTO: print(self.lista_cursos[solucao[k][i][j]].nome, i , j ,self.lista_cursos[solucao[k][i][j]].qtd_alunos - int(self.lista_salas[k].capacidade))
+                            if self.DEBUG_CUSTO: print(self.lista_cursos[solucao[k][i][j]].nome, i , j ,self.lista_cursos[solucao[k][i][j]].qtd_alunos - int(self.lista_salas[k].capacidade))
                             custo += self.lista_cursos[solucao[k][i][j]].qtd_alunos - int(self.lista_salas[k].capacidade)
-        if DEBUG_CUSTO: print("R5", custo*peso)
+        if self.DEBUG_CUSTO: print("R5", custo*peso)
         return custo*peso
     
     def restricao_6(self, solucao, peso=5):
@@ -317,34 +330,46 @@ class Solucao(instancia.Instancia):
                     qtd_dias += 1
             
             if self.lista_cursos[c].num_min_dias > qtd_dias:
-                if DEBUG_CUSTO: print(self.lista_cursos[c].nome, self.lista_cursos[c].num_min_dias, qtd_dias)
+                if self.DEBUG_CUSTO: print(self.lista_cursos[c].nome, self.lista_cursos[c].num_min_dias, qtd_dias)
                 custo += self.lista_cursos[c].num_min_dias - qtd_dias
-        if DEBUG_CUSTO: print("R6", custo*peso)
+        if self.DEBUG_CUSTO: print("R6", custo*peso)
         return custo * peso
 
     def restricao_7(self, solucao, peso=2):
         # CORRIGIR ESSE CALCULO
-        
-        custo = 0
-        #– S3-Aulas Isoladas: Aulas de disciplinas de um mesmo currículo devem ser adjacentes uma à outra. Para cada currículo, uma violação é contada quando há uma aula não adjacente à nenhuma outra aula do mesmo currículo no mesmo dia.
-        for k in range(self.qtd_salas):
-            for i in range(self.qtd_dias):
-                for cur in range(self.qtd_curriculos):
-                    qtd = 0
-                    seq = 0
-                    max_seq = 0
-                    for j in range(self.qtd_horarios):
-                        if self.lista_cursos[ solucao[k][i][j] ].nome in self.lista_curriculos[cur].lista_disciplinas:
-                            qtd += 1
-                            seq += 1
-                        else:
-                            if seq > max_seq: max_seq = seq
-                            seq = 0
-                    
-                    if qtd != max_seq:
-                        custo += 1
 
-        if DEBUG_CUSTO: print("R7", custo*peso)
+        custo = 0
+
+        for i in range(self.qtd_dias):
+            for j in range(self.qtd_horarios):
+                for cur in range(self.qtd_curriculos):
+                    possui_aula = 0
+                    for k in range(self.qtd_salas):
+                        if solucao[k][i][j] != -1 and self.lista_cursos[ solucao[k][i][j] ].nome in self.lista_curriculos[cur].lista_disciplinas:
+                            possui_aula = 1
+                    
+                    if possui_aula:
+                        adjascente = 0
+                        if j == 0: # se for o primeiro horario
+                            for k in range(self.qtd_salas):
+                                if solucao[k][i][j+1] != -1 and self.lista_cursos[ solucao[k][i][j+1] ].nome in self.lista_curriculos[cur].lista_disciplinas:
+                                    adjascente = 1
+                        elif j == self.qtd_horarios-1: # se for ultimo horario
+                            for k in range(self.qtd_salas):
+                                if solucao[k][i][j-1] != -1 and self.lista_cursos[ solucao[k][i][j-1] ].nome in self.lista_curriculos[cur].lista_disciplinas:
+                                    adjascente = 1
+                        else:
+                            for k in range(self.qtd_salas):
+                                if solucao[k][i][j+1] != -1 and self.lista_cursos[ solucao[k][i][j+1] ].nome in self.lista_curriculos[cur].lista_disciplinas:
+                                    adjascente = 1
+                                if solucao[k][i][j-1] != -1 and self.lista_cursos[ solucao[k][i][j-1] ].nome in self.lista_curriculos[cur].lista_disciplinas:
+                                    adjascente = 1
+
+                        if adjascente == 0:
+                            custo += 1
+                                
+
+        if self.DEBUG_CUSTO: print("R7", custo*peso)
         return custo*peso
     
     def restricao_8(self, solucao, peso=1):
@@ -364,7 +389,7 @@ class Solucao(instancia.Instancia):
                             break
 
                 sala += aux
-            if DEBUG_CUSTO: print(self.lista_cursos[c].nome, sala)
+            if self.DEBUG_CUSTO: print(self.lista_cursos[c].nome, sala)
             custo += sala - 1
-        if DEBUG_CUSTO: print("R8", custo*peso)
+        if self.DEBUG_CUSTO: print("R8", custo*peso)
         return custo*peso
