@@ -49,6 +49,7 @@ class Solucao(instancia.Instancia):
         
 
         self.matriz_alocacao = self.inicializaMatrizAlocacao()
+        self.forced = self.inicializaMatrizAlocacao(initial_value=0)
         self.custo = 0
         self.ite = 0
         
@@ -60,7 +61,7 @@ class Solucao(instancia.Instancia):
         #print(self.calculaCusto(self.solucao_inicial))
 
 
-    def inicializaMatrizAlocacao(self):
+    def inicializaMatrizAlocacao(self, initial_value=-1):
         matriz_alocacao = []
         for i in range(self.qtd_salas):
             sala = []
@@ -69,7 +70,7 @@ class Solucao(instancia.Instancia):
                 dia = []
                 matriz_alocacao[i].append(dia)
                 for k in range(self.qtd_horarios):
-                    matriz_alocacao[i][j].append(-1)
+                    matriz_alocacao[i][j].append(initial_value)
         
         return matriz_alocacao
     
@@ -118,7 +119,7 @@ class Solucao(instancia.Instancia):
                 if alocado == 1: break
                 for i in range(self.qtd_dias):
                     if alocado == 1: break
-                    if random.random() < randomness: #fator de aleatoriedade 
+                    if random.random() <= randomness: #fator de aleatoriedade 
                         if solucao[k][i][j] == -1:
                             if self.verificaDisponibilidade(solucao, curso, k, i, j): #verificar a disponibilidade de alocar o curso nessa sala dia horario
                                 #print(self.lista_cursos[curso].nome, "alocado")
@@ -129,18 +130,34 @@ class Solucao(instancia.Instancia):
     def alocaCursoForce(self, curso, solucao):
         #print("Force", self.lista_cursos[curso].nome)
         alocado = 0
-        for k in range(self.qtd_salas):
-            if alocado == 1: break
-            for i in range(self.qtd_dias):
+        aux = 0
+
+        while not alocado:
+            aux += 1
+            if aux == 1000:
+                print("Nao foi possivel alocar disciplina")
+                exit()
+            for k in range(self.qtd_salas):
                 if alocado == 1: break
-                for j in range(self.qtd_horarios):
+                for i in range(self.qtd_dias):
                     if alocado == 1: break
-                    
-                    if self.verificaDisponibilidade(solucao, curso, k, i, j) and solucao[k][i][j] != curso:
-                        removido = solucao[k][i][j]
-                        solucao[k][i][j] = curso
-                        solucao, lixo = self.alocaCurso(removido, solucao, 1)
-                        alocado = 1
+                    for j in range(self.qtd_horarios):
+                        if alocado == 1: break
+                        if random.random() <= 0.7:
+                            if self.verificaDisponibilidade(solucao, curso, k, i, j) and solucao[k][i][j] != curso:
+                                removido = solucao[k][i][j]
+                                solucao[k][i][j] = curso
+                                self.forced[k][i][j] = 1
+
+                                #print("Removido", self.lista_cursos[removido].nome)
+
+                                if removido != -1:    
+                                    solucao, alocado = self.alocaCurso(removido, solucao, 1)
+                                    #print("Aloco")
+                                    if not alocado:
+                                        #print("Nao Aloco")
+                                        solucao = self.alocaCursoForce(removido, solucao)
+                                        alocado = 1
         
         
         return solucao
@@ -198,7 +215,10 @@ class Solucao(instancia.Instancia):
                             if self.lista_cursos[ solucao[k][dia][horario] ].nome in self.lista_curriculos[cur].lista_disciplinas:
                                 return 0
 
-                
+        if self.forced[sala][dia][horario] == 1:
+            if random.random() < 0.9:
+                return 0
+
         if int(self.lista_cursos[curso].qtd_alunos) > int(self.lista_salas[sala].capacidade):
             if random.random() > 0.75:
                 return 0
@@ -265,6 +285,7 @@ class Solucao(instancia.Instancia):
             horario = random.randint(0, self.qtd_horarios-1)
 
             if solucao[sala][dia][horario] != -1:
+                self.forced[sala][dia][horario] = 0
                 lista_removidos.append(solucao[sala][dia][horario])
                 solucao[sala][dia][horario] = -1
                 qtd_removidos += 1

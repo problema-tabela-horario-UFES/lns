@@ -8,7 +8,7 @@ saida='results/saida'
 tests_folder="tests"
 results_folder="results"
 
-timelimit="--timelimit=180"
+timelimit="--timelimit=1"
 #saida='' # saida padrao no terminal
 
 
@@ -47,9 +47,9 @@ for i in ${!instances[@]};do
     #rm $results_folder/${instances[i]}/* -r
     for j in 1 2 3 4 5;do
         #echo "$exec <tests/${instances[i]} > $results_folder/${instances[i]}/${j} $timelimit"
-        $exec <tests/${instances[i]} > $results_folder/${instances[i]}/${j} $timelimit
+        $exec <$tests_folder/${instances[i]} > $results_folder/${instances[i]}/${j} $timelimit
         #echo "./validator tests/${instances[i]} $results_folder/${instances[i]}/${j} >validator_$j"
-        ./tools/validator/validator tests/${instances[i]} $results_folder/${instances[i]}/${j} >$results_folder/${instances[i]}/validator_$j
+        ./tools/validator/validator $tests_folder/${instances[i]} $results_folder/${instances[i]}/${j} >$results_folder/${instances[i]}/validator_$j
     done
 done
 

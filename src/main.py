@@ -3,7 +3,7 @@
 from solucao import *
 from instancia import *
 
-timelimit = 180
+timelimit = 1
 g = False
 d = False
 dc = False
