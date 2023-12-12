@@ -8,11 +8,17 @@ saida='results/saida'
 tests_folder="tests"
 results_folder="results"
 
-timelimit="--timelimit=1"
+timelimit="--timelimit=10"
 #saida='' # saida padrao no terminal
 
 
 instances=(
+    "toy.ctt"
+    "comp01.ctt"
+    "comp02.ctt"
+)
+
+all_instances=(
     "toy.ctt"
     "comp01.ctt"
     "comp02.ctt"
@@ -37,6 +43,7 @@ instances=(
     "comp21.ctt"
 )
 
+
 echo "Running"
 
 # Run for each instance 5 times
@@ -46,9 +53,9 @@ for i in ${!instances[@]};do
     mkdir -p "$results_folder/${instances[i]}"
     #rm $results_folder/${instances[i]}/* -r
     for j in 1 2 3 4 5;do
-        #echo "$exec <tests/${instances[i]} > $results_folder/${instances[i]}/${j} $timelimit"
+        #echo "$exec <tests/${instances[i]} > $results_folder/${instances[i]}/solution_${j} $timelimit"
         $exec <$tests_folder/${instances[i]} > $results_folder/${instances[i]}/${j} $timelimit
-        #echo "./validator tests/${instances[i]} $results_folder/${instances[i]}/${j} >validator_$j"
+        #echo "./tools/validator/validator $tests_folder/solution_${instances[i]} $results_folder/${instances[i]}/${j} >$results_folder/${instances[i]}/validator_$j"
         ./tools/validator/validator $tests_folder/${instances[i]} $results_folder/${instances[i]}/${j} >$results_folder/${instances[i]}/validator_$j
     done
 done
