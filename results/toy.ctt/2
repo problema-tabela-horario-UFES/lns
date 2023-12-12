@@ -1,0 +1,15 @@
+SceCosC rA 0 0
+Geotec rA 0 3
+Geotec rA 1 0
+SceCosC rA 1 2
+SceCosC rA 2 1
+Geotec rA 3 0
+ArcTec rB 0 1
+TecCos rB 0 2
+ArcTec rB 1 0
+TecCos rB 1 1
+ArcTec rB 2 2
+TecCos rB 3 1
+ArcTec rB 3 2
+ 
+Custo e Iteracoes: 10 67383

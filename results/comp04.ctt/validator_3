@@ -1,0 +1,419 @@
+[S(34)] Room r36 too small for course c0045 the period 16 (day 3, timeslot 1)
+[S(28)] Room r38 too small for course c0045 the period 19 (day 3, timeslot 4)
+[S(8)] Room r27 too small for course c0053 the period 2 (day 0, timeslot 2)
+[S(23)] Room r25 too small for course c0053 the period 9 (day 1, timeslot 4)
+[S(21)] Room r36 too small for course c0053 the period 21 (day 4, timeslot 1)
+[S(8)] Room r27 too small for course c0055 the period 1 (day 0, timeslot 1)
+[S(21)] Room r36 too small for course c0055 the period 19 (day 3, timeslot 4)
+[S(21)] Room r27 too small for course c0057 the period 8 (day 1, timeslot 3)
+[S(29)] Room r51 too small for course c0060 the period 4 (day 0, timeslot 4)
+[S(47)] Room r36 too small for course c0060 the period 10 (day 2, timeslot 0)
+[S(47)] Room r37 too small for course c0060 the period 11 (day 2, timeslot 1)
+[S(20)] Room r31 too small for course c0094 the period 15 (day 3, timeslot 0)
+[S(15)] Room r27 too small for course c0094 the period 18 (day 3, timeslot 3)
+[S(37)] Room r27 too small for course c0098 the period 16 (day 3, timeslot 1)
+[S(42)] Room r31 too small for course c0098 the period 21 (day 4, timeslot 1)
+[S(37)] Room r27 too small for course c0104 the period 5 (day 1, timeslot 0)
+[S(32)] Room r51 too small for course c0104 the period 7 (day 1, timeslot 2)
+[S(52)] Room r25 too small for course c0104 the period 11 (day 2, timeslot 1)
+[S(22)] Room r38 too small for course c0107 the period 0 (day 0, timeslot 0)
+[S(28)] Room r36 too small for course c0107 the period 9 (day 1, timeslot 4)
+[S(20)] Room r31 too small for course c0107 the period 20 (day 4, timeslot 0)
+[S(15)] Room r27 too small for course c0112 the period 14 (day 2, timeslot 4)
+[S(37)] Room r27 too small for course c0114 the period 6 (day 1, timeslot 1)
+[S(50)] Room r37 too small for course c0114 the period 20 (day 4, timeslot 0)
+[S(71)] Room r50 too small for course c0149 the period 13 (day 2, timeslot 3)
+[S(71)] Room r37 too small for course c0179 the period 7 (day 1, timeslot 2)
+[S(65)] Room r38 too small for course c0179 the period 23 (day 4, timeslot 3)
+[S(65)] Room r38 too small for course c0181 the period 3 (day 0, timeslot 3)
+[S(40)] Room r38 too small for course c0198 the period 2 (day 0, timeslot 2)
+[S(40)] Room r38 too small for course c0198 the period 16 (day 3, timeslot 1)
+[S(85)] Room r25 too small for course c0210 the period 14 (day 2, timeslot 4)
+[S(38)] Room r36 too small for course c0218 the period 1 (day 0, timeslot 1)
+[S(20)] Room r51 too small for course c0218 the period 13 (day 2, timeslot 3)
+[S(30)] Room r31 too small for course c0223 the period 14 (day 2, timeslot 4)
+[S(68)] Room r37 too small for course c0226 the period 10 (day 2, timeslot 0)
+[S(62)] Room r38 too small for course c0226 the period 20 (day 4, timeslot 0)
+[S(50)] Room r51 too small for course c0226 the period 22 (day 4, timeslot 2)
+[S(40)] Room r50 too small for course c0227 the period 10 (day 2, timeslot 0)
+[S(24)] Room r37 too small for course c0233 the period 1 (day 0, timeslot 1)
+[S(28)] Room r36 too small for course c0249 the period 22 (day 4, timeslot 2)
+[S(20)] Room r31 too small for course c0249 the period 23 (day 4, timeslot 3)
+[S(59)] Room r27 too small for course c0254 the period 13 (day 2, timeslot 3)
+[S(72)] Room r36 too small for course c0271 the period 0 (day 0, timeslot 0)
+[S(72)] Room r36 too small for course c0271 the period 24 (day 4, timeslot 4)
+[S(8)] Room r36 too small for course c0420 the period 2 (day 0, timeslot 2)
+[S(10)] Room r25 too small for course c0420 the period 20 (day 4, timeslot 0)
+[S(28)] Room r36 too small for course c0456 the period 12 (day 2, timeslot 2)
+[S(22)] Room r38 too small for course c0456 the period 13 (day 2, timeslot 3)
+[S(2)] Room r38 too small for course c0457 the period 9 (day 1, timeslot 4)
+[S(28)] Room r37 too small for course c0465 the period 3 (day 0, timeslot 3)
+[S(20)] Room r31 too small for course c0465 the period 11 (day 2, timeslot 1)
+[S(13)] Room r25 too small for course c0884 the period 2 (day 0, timeslot 2)
+[S(11)] Room r37 too small for course c0884 the period 22 (day 4, timeslot 2)
+[S(4)] Room r37 too small for course c0953 the period 2 (day 0, timeslot 2)
+[S(4)] Room r37 too small for course c0969 the period 0 (day 0, timeslot 0)
+[S(10)] Room r31 too small for course c0978 the period 12 (day 2, timeslot 2)
+[S(20)] Room r25 too small for course c0978 the period 24 (day 4, timeslot 4)
+[S(16)] Room r51 too small for course c1007 the period 0 (day 0, timeslot 0)
+[S(21)] Room r27 too small for course c1007 the period 15 (day 3, timeslot 0)
+[S(36)] Room r25 too small for course c1007 the period 21 (day 4, timeslot 1)
+[S(10)] Room r31 too small for course c1044 the period 5 (day 1, timeslot 0)
+[S(12)] Room r38 too small for course c1044 the period 6 (day 1, timeslot 1)
+[S(18)] Room r36 too small for course c1044 the period 20 (day 4, timeslot 0)
+[S(60)] Room r50 too small for course c0741 the period 0 (day 0, timeslot 0)
+[S(45)] Room r27 too small for course c0196 the period 10 (day 2, timeslot 0)
+[S(40)] Room r51 too small for course c0196 the period 16 (day 3, timeslot 1)
+[S(60)] Room r25 too small for course c0196 the period 17 (day 3, timeslot 2)
+[S(60)] Room r25 too small for course c0196 the period 19 (day 3, timeslot 4)
+[S(5)] The course c0012 has only 2 days of lecture
+[S(5)] The course c0045 has only 2 days of lecture
+[S(5)] The course c0052 has only 2 days of lecture
+[S(5)] The course c0055 has only 2 days of lecture
+[S(5)] The course c0057 has only 2 days of lecture
+[S(5)] The course c0060 has only 2 days of lecture
+[S(5)] The course c0094 has only 2 days of lecture
+[S(5)] The course c0104 has only 2 days of lecture
+[S(5)] The course c0112 has only 2 days of lecture
+[S(5)] The course c0114 has only 2 days of lecture
+[S(5)] The course c0116 has only 2 days of lecture
+[S(5)] The course c0148 has only 2 days of lecture
+[S(5)] The course c0149 has only 2 days of lecture
+[S(5)] The course c0150 has only 2 days of lecture
+[S(5)] The course c0162 has only 2 days of lecture
+[S(5)] The course c0177 has only 2 days of lecture
+[S(5)] The course c0179 has only 2 days of lecture
+[S(5)] The course c0210 has only 2 days of lecture
+[S(5)] The course c0214 has only 2 days of lecture
+[S(5)] The course c0224 has only 2 days of lecture
+[S(5)] The course c0226 has only 2 days of lecture
+[S(5)] The course c0227 has only 2 days of lecture
+[S(5)] The course c0249 has only 2 days of lecture
+[S(5)] The course c0409 has only 2 days of lecture
+[S(5)] The course c0416 has only 2 days of lecture
+[S(5)] The course c0441 has only 2 days of lecture
+[S(5)] The course c0456 has only 2 days of lecture
+[S(5)] The course c0457 has only 2 days of lecture
+[S(5)] The course c0465 has only 2 days of lecture
+[S(5)] The course c0501 has only 2 days of lecture
+[S(5)] The course c0510 has only 3 days of lecture
+[S(5)] The course c0527 has only 2 days of lecture
+[S(5)] The course c0745 has only 2 days of lecture
+[S(5)] The course c0899 has only 2 days of lecture
+[S(5)] The course c0991 has only 2 days of lecture
+[S(5)] The course c1041 has only 1 days of lecture
+[S(5)] The course c0741 has only 3 days of lecture
+[S(5)] The course c0196 has only 3 days of lecture
+[S(5)] The course c0798 has only 3 days of lecture
+[S(2)] Curriculum q000 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q000 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q000 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q000 has an isolated lecture at period 14 (day 2, timeslot 4)
+[S(2)] Curriculum q000 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q000 has an isolated lecture at period 18 (day 3, timeslot 3)
+[S(2)] Curriculum q000 has an isolated lecture at period 20 (day 4, timeslot 0)
+[S(2)] Curriculum q001 has an isolated lecture at period 11 (day 2, timeslot 1)
+[S(2)] Curriculum q001 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q001 has an isolated lecture at period 16 (day 3, timeslot 1)
+[S(2)] Curriculum q001 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q002 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q002 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q002 has an isolated lecture at period 11 (day 2, timeslot 1)
+[S(2)] Curriculum q002 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q003 has an isolated lecture at period 5 (day 1, timeslot 0)
+[S(2)] Curriculum q003 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q003 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q003 has an isolated lecture at period 12 (day 2, timeslot 2)
+[S(2)] Curriculum q003 has an isolated lecture at period 14 (day 2, timeslot 4)
+[S(2)] Curriculum q003 has an isolated lecture at period 20 (day 4, timeslot 0)
+[S(2)] Curriculum q003 has an isolated lecture at period 22 (day 4, timeslot 2)
+[S(2)] Curriculum q004 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q004 has an isolated lecture at period 5 (day 1, timeslot 0)
+[S(2)] Curriculum q004 has an isolated lecture at period 7 (day 1, timeslot 2)
+[S(2)] Curriculum q004 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q004 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q004 has an isolated lecture at period 12 (day 2, timeslot 2)
+[S(2)] Curriculum q004 has an isolated lecture at period 14 (day 2, timeslot 4)
+[S(2)] Curriculum q005 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q005 has an isolated lecture at period 16 (day 3, timeslot 1)
+[S(2)] Curriculum q005 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q005 has an isolated lecture at period 22 (day 4, timeslot 2)
+[S(2)] Curriculum q006 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q006 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q006 has an isolated lecture at period 22 (day 4, timeslot 2)
+[S(2)] Curriculum q006 has an isolated lecture at period 24 (day 4, timeslot 4)
+[S(2)] Curriculum q007 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q007 has an isolated lecture at period 16 (day 3, timeslot 1)
+[S(2)] Curriculum q007 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q008 has an isolated lecture at period 3 (day 0, timeslot 3)
+[S(2)] Curriculum q008 has an isolated lecture at period 5 (day 1, timeslot 0)
+[S(2)] Curriculum q008 has an isolated lecture at period 8 (day 1, timeslot 3)
+[S(2)] Curriculum q008 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q009 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q009 has an isolated lecture at period 5 (day 1, timeslot 0)
+[S(2)] Curriculum q009 has an isolated lecture at period 7 (day 1, timeslot 2)
+[S(2)] Curriculum q009 has an isolated lecture at period 11 (day 2, timeslot 1)
+[S(2)] Curriculum q010 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q010 has an isolated lecture at period 2 (day 0, timeslot 2)
+[S(2)] Curriculum q010 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q011 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q011 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q011 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q011 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q012 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q012 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q012 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q015 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q015 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q015 has an isolated lecture at period 24 (day 4, timeslot 4)
+[S(2)] Curriculum q016 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q016 has an isolated lecture at period 3 (day 0, timeslot 3)
+[S(2)] Curriculum q016 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q016 has an isolated lecture at period 16 (day 3, timeslot 1)
+[S(2)] Curriculum q016 has an isolated lecture at period 18 (day 3, timeslot 3)
+[S(2)] Curriculum q017 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q017 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q017 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q017 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q018 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q018 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q019 has an isolated lecture at period 3 (day 0, timeslot 3)
+[S(2)] Curriculum q019 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q020 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q020 has an isolated lecture at period 2 (day 0, timeslot 2)
+[S(2)] Curriculum q020 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q020 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q020 has an isolated lecture at period 20 (day 4, timeslot 0)
+[S(2)] Curriculum q020 has an isolated lecture at period 24 (day 4, timeslot 4)
+[S(2)] Curriculum q021 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q021 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q022 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q022 has an isolated lecture at period 3 (day 0, timeslot 3)
+[S(2)] Curriculum q022 has an isolated lecture at period 5 (day 1, timeslot 0)
+[S(2)] Curriculum q022 has an isolated lecture at period 8 (day 1, timeslot 3)
+[S(2)] Curriculum q023 has an isolated lecture at period 14 (day 2, timeslot 4)
+[S(2)] Curriculum q023 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q024 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q024 has an isolated lecture at period 8 (day 1, timeslot 3)
+[S(2)] Curriculum q024 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q024 has an isolated lecture at period 12 (day 2, timeslot 2)
+[S(2)] Curriculum q024 has an isolated lecture at period 14 (day 2, timeslot 4)
+[S(2)] Curriculum q025 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q025 has an isolated lecture at period 5 (day 1, timeslot 0)
+[S(2)] Curriculum q025 has an isolated lecture at period 8 (day 1, timeslot 3)
+[S(2)] Curriculum q026 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q026 has an isolated lecture at period 7 (day 1, timeslot 2)
+[S(2)] Curriculum q026 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q026 has an isolated lecture at period 20 (day 4, timeslot 0)
+[S(2)] Curriculum q026 has an isolated lecture at period 22 (day 4, timeslot 2)
+[S(2)] Curriculum q026 has an isolated lecture at period 24 (day 4, timeslot 4)
+[S(2)] Curriculum q027 has an isolated lecture at period 3 (day 0, timeslot 3)
+[S(2)] Curriculum q027 has an isolated lecture at period 24 (day 4, timeslot 4)
+[S(2)] Curriculum q028 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q028 has an isolated lecture at period 7 (day 1, timeslot 2)
+[S(2)] Curriculum q028 has an isolated lecture at period 24 (day 4, timeslot 4)
+[S(2)] Curriculum q029 has an isolated lecture at period 16 (day 3, timeslot 1)
+[S(2)] Curriculum q029 has an isolated lecture at period 18 (day 3, timeslot 3)
+[S(2)] Curriculum q030 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q030 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q031 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q033 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q033 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q033 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q033 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q033 has an isolated lecture at period 17 (day 3, timeslot 2)
+[S(2)] Curriculum q033 has an isolated lecture at period 20 (day 4, timeslot 0)
+[S(2)] Curriculum q035 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q035 has an isolated lecture at period 16 (day 3, timeslot 1)
+[S(2)] Curriculum q035 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q036 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q036 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q036 has an isolated lecture at period 16 (day 3, timeslot 1)
+[S(2)] Curriculum q036 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q036 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q037 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q037 has an isolated lecture at period 18 (day 3, timeslot 3)
+[S(2)] Curriculum q037 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q037 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q038 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q038 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q038 has an isolated lecture at period 18 (day 3, timeslot 3)
+[S(2)] Curriculum q038 has an isolated lecture at period 22 (day 4, timeslot 2)
+[S(2)] Curriculum q039 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q039 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q039 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q040 has an isolated lecture at period 11 (day 2, timeslot 1)
+[S(2)] Curriculum q041 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q041 has an isolated lecture at period 11 (day 2, timeslot 1)
+[S(2)] Curriculum q041 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q041 has an isolated lecture at period 22 (day 4, timeslot 2)
+[S(2)] Curriculum q043 has an isolated lecture at period 17 (day 3, timeslot 2)
+[S(2)] Curriculum q043 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q043 has an isolated lecture at period 20 (day 4, timeslot 0)
+[S(2)] Curriculum q044 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q044 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q044 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q045 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q045 has an isolated lecture at period 17 (day 3, timeslot 2)
+[S(2)] Curriculum q045 has an isolated lecture at period 20 (day 4, timeslot 0)
+[S(2)] Curriculum q046 has an isolated lecture at period 2 (day 0, timeslot 2)
+[S(2)] Curriculum q046 has an isolated lecture at period 5 (day 1, timeslot 0)
+[S(2)] Curriculum q046 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q046 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q046 has an isolated lecture at period 20 (day 4, timeslot 0)
+[S(2)] Curriculum q047 has an isolated lecture at period 2 (day 0, timeslot 2)
+[S(2)] Curriculum q047 has an isolated lecture at period 18 (day 3, timeslot 3)
+[S(2)] Curriculum q047 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q048 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q048 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q048 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q048 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q049 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q049 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q049 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q049 has an isolated lecture at period 16 (day 3, timeslot 1)
+[S(2)] Curriculum q049 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q049 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q049 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q050 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q050 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q050 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q050 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q050 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q051 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q051 has an isolated lecture at period 24 (day 4, timeslot 4)
+[S(2)] Curriculum q052 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q052 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q052 has an isolated lecture at period 22 (day 4, timeslot 2)
+[S(2)] Curriculum q052 has an isolated lecture at period 24 (day 4, timeslot 4)
+[S(2)] Curriculum q053 has an isolated lecture at period 0 (day 0, timeslot 0)
+[S(2)] Curriculum q053 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q053 has an isolated lecture at period 9 (day 1, timeslot 4)
+[S(2)] Curriculum q053 has an isolated lecture at period 10 (day 2, timeslot 0)
+[S(2)] Curriculum q053 has an isolated lecture at period 12 (day 2, timeslot 2)
+[S(2)] Curriculum q053 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q054 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q054 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q054 has an isolated lecture at period 14 (day 2, timeslot 4)
+[S(2)] Curriculum q054 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q054 has an isolated lecture at period 18 (day 3, timeslot 3)
+[S(2)] Curriculum q054 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q055 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q055 has an isolated lecture at period 14 (day 2, timeslot 4)
+[S(2)] Curriculum q055 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q055 has an isolated lecture at period 23 (day 4, timeslot 3)
+[S(2)] Curriculum q056 has an isolated lecture at period 3 (day 0, timeslot 3)
+[S(2)] Curriculum q056 has an isolated lecture at period 8 (day 1, timeslot 3)
+[S(2)] Curriculum q056 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q056 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q057 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q057 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q057 has an isolated lecture at period 15 (day 3, timeslot 0)
+[S(2)] Curriculum q057 has an isolated lecture at period 20 (day 4, timeslot 0)
+[S(2)] Curriculum q058 has an isolated lecture at period 2 (day 0, timeslot 2)
+[S(2)] Curriculum q058 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q058 has an isolated lecture at period 5 (day 1, timeslot 0)
+[S(2)] Curriculum q058 has an isolated lecture at period 7 (day 1, timeslot 2)
+[S(2)] Curriculum q058 has an isolated lecture at period 11 (day 2, timeslot 1)
+[S(2)] Curriculum q058 has an isolated lecture at period 16 (day 3, timeslot 1)
+[S(2)] Curriculum q058 has an isolated lecture at period 18 (day 3, timeslot 3)
+[S(2)] Curriculum q058 has an isolated lecture at period 21 (day 4, timeslot 1)
+[S(2)] Curriculum q059 has an isolated lecture at period 7 (day 1, timeslot 2)
+[S(2)] Curriculum q059 has an isolated lecture at period 17 (day 3, timeslot 2)
+[S(2)] Curriculum q059 has an isolated lecture at period 19 (day 3, timeslot 4)
+[S(2)] Curriculum q060 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q060 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q061 has an isolated lecture at period 1 (day 0, timeslot 1)
+[S(2)] Curriculum q061 has an isolated lecture at period 4 (day 0, timeslot 4)
+[S(2)] Curriculum q061 has an isolated lecture at period 6 (day 1, timeslot 1)
+[S(2)] Curriculum q061 has an isolated lecture at period 13 (day 2, timeslot 3)
+[S(2)] Curriculum q061 has an isolated lecture at period 17 (day 3, timeslot 2)
+[S(2)] Course c0012 uses 3 different rooms
+[S(2)] Course c0013 uses 3 different rooms
+[S(2)] Course c0014 uses 3 different rooms
+[S(2)] Course c0035 uses 3 different rooms
+[S(1)] Course c0036 uses 2 different rooms
+[S(2)] Course c0045 uses 3 different rooms
+[S(2)] Course c0052 uses 3 different rooms
+[S(2)] Course c0053 uses 3 different rooms
+[S(2)] Course c0055 uses 3 different rooms
+[S(2)] Course c0057 uses 3 different rooms
+[S(2)] Course c0060 uses 3 different rooms
+[S(2)] Course c0094 uses 3 different rooms
+[S(2)] Course c0098 uses 3 different rooms
+[S(2)] Course c0104 uses 3 different rooms
+[S(2)] Course c0107 uses 3 different rooms
+[S(2)] Course c0112 uses 3 different rooms
+[S(2)] Course c0114 uses 3 different rooms
+[S(2)] Course c0116 uses 3 different rooms
+[S(1)] Course c0117 uses 2 different rooms
+[S(2)] Course c0130 uses 3 different rooms
+[S(2)] Course c0148 uses 3 different rooms
+[S(2)] Course c0149 uses 3 different rooms
+[S(1)] Course c0162 uses 2 different rooms
+[S(1)] Course c0163 uses 2 different rooms
+[S(2)] Course c0177 uses 3 different rooms
+[S(2)] Course c0179 uses 3 different rooms
+[S(2)] Course c0181 uses 3 different rooms
+[S(1)] Course c0198 uses 2 different rooms
+[S(2)] Course c0210 uses 3 different rooms
+[S(2)] Course c0214 uses 3 different rooms
+[S(2)] Course c0218 uses 3 different rooms
+[S(2)] Course c0223 uses 3 different rooms
+[S(2)] Course c0224 uses 3 different rooms
+[S(2)] Course c0226 uses 3 different rooms
+[S(2)] Course c0227 uses 3 different rooms
+[S(2)] Course c0233 uses 3 different rooms
+[S(2)] Course c0249 uses 3 different rooms
+[S(2)] Course c0254 uses 3 different rooms
+[S(1)] Course c0271 uses 2 different rooms
+[S(2)] Course c0409 uses 3 different rooms
+[S(2)] Course c0416 uses 3 different rooms
+[S(2)] Course c0420 uses 3 different rooms
+[S(2)] Course c0441 uses 3 different rooms
+[S(2)] Course c0447 uses 3 different rooms
+[S(2)] Course c0456 uses 3 different rooms
+[S(1)] Course c0457 uses 2 different rooms
+[S(2)] Course c0465 uses 3 different rooms
+[S(2)] Course c0486 uses 3 different rooms
+[S(2)] Course c0491 uses 3 different rooms
+[S(2)] Course c0498 uses 3 different rooms
+[S(1)] Course c0501 uses 2 different rooms
+[S(2)] Course c0506 uses 3 different rooms
+[S(5)] Course c0510 uses 6 different rooms
+[S(1)] Course c0527 uses 2 different rooms
+[S(2)] Course c0670 uses 3 different rooms
+[S(1)] Course c0738 uses 2 different rooms
+[S(2)] Course c0745 uses 3 different rooms
+[S(2)] Course c0773 uses 3 different rooms
+[S(3)] Course c0814 uses 4 different rooms
+[S(2)] Course c0825 uses 3 different rooms
+[S(5)] Course c0882 uses 6 different rooms
+[S(5)] Course c0884 uses 6 different rooms
+[S(1)] Course c0899 uses 2 different rooms
+[S(2)] Course c0901 uses 3 different rooms
+[S(2)] Course c0933 uses 3 different rooms
+[S(5)] Course c0947 uses 6 different rooms
+[S(3)] Course c0953 uses 4 different rooms
+[S(4)] Course c0969 uses 5 different rooms
+[S(4)] Course c0972 uses 5 different rooms
+[S(4)] Course c0978 uses 5 different rooms
+[S(3)] Course c0985 uses 4 different rooms
+[S(2)] Course c0991 uses 3 different rooms
+[S(2)] Course c1007 uses 3 different rooms
+[S(2)] Course c1041 uses 3 different rooms
+[S(5)] Course c1044 uses 6 different rooms
+[S(4)] Course c0741 uses 5 different rooms
+[S(4)] Course c0196 uses 5 different rooms
+[S(3)] Course c0798 uses 4 different rooms
+
+Violations of Lectures (hard) : 0
+Violations of Conflicts (hard) : 0
+Violations of Availability (hard) : 0
+Violations of RoomOccupation (hard) : 0
+Cost of RoomCapacity (soft) : 2272
+Cost of MinWorkingDays (soft) : 195
+Cost of CurriculumCompactness (soft) : 446
+Cost of RoomStability (soft) : 174
+
+Summary: Total Cost = 3087

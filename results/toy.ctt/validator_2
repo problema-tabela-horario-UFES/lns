@@ -1,0 +1,13 @@
+[S(5)] The course TecCos has only 3 days of lecture
+[S(5)] The course Geotec has only 3 days of lecture
+
+Violations of Lectures (hard) : 0
+Violations of Conflicts (hard) : 0
+Violations of Availability (hard) : 0
+Violations of RoomOccupation (hard) : 0
+Cost of RoomCapacity (soft) : 0
+Cost of MinWorkingDays (soft) : 10
+Cost of CurriculumCompactness (soft) : 0
+Cost of RoomStability (soft) : 0
+
+Summary: Total Cost = 10
